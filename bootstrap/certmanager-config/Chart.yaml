@@ -1,0 +1,3 @@
+apiVersion: v2
+name: certmanager-config
+version: 0.1.0

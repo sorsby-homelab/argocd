@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: certmanager
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  destinations:
+    - namespace: 'kube-system'
+      server: 'https://kubernetes.default.svc'
+    - namespace: 'cert-manager'
+      server: 'https://kubernetes.default.svc'
+    - namespace: 'istio-system'
+      server: 'https://kubernetes.default.svc'
+    - namespace: 'argocd'
+      server: 'https://kubernetes.default.svc'
+  sourceNamespaces:
+    - '*'
+  sourceRepos:
+    - '*'

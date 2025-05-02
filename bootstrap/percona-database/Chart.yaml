@@ -1,0 +1,7 @@
+apiVersion: v2
+name: percona-database-wrapper
+version: 0.1.0
+dependencies:
+  - name: pxc-db
+    version: 1.17.0
+    repository: https://percona.github.io/percona-helm-charts/

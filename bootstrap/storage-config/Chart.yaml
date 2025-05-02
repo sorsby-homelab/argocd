@@ -1,0 +1,3 @@
+apiVersion: v2
+name: storage-config-wrapper
+version: 0.1.0

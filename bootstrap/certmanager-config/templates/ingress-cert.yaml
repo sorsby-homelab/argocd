@@ -1,0 +1,18 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: ingress-cert
+  namespace: istio-system
+spec:
+  secretName: ingress-cert
+  commonName: lab.sorsby.co
+  dnsNames:
+    - lab.sorsby.co
+    - argocd.lab.sorsby.co
+    - grafana.lab.sorsby.co
+    - prometheus.lab.sorsby.co
+    - alertmanager.lab.sorsby.co
+    - home-assistant.lab.sorsby.co
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer

@@ -1,0 +1,33 @@
+pxc-db:
+  pxc:
+    certManager: true
+    persistence:
+      storageClass: "nfs-storage"
+
+  proxysql:
+    enabled: true
+    persistence:
+      storageClass: "nfs-storage"
+
+  pmm:
+    enabled: false
+
+  users:
+    - name: keycloak
+      dbs:
+        - keycloak
+      hosts:
+        - "%"
+      grants:
+        - "SELECT"
+        - "DELETE"
+        - "INSERT"
+        - "UPDATE"
+      withGrantOption: true
+      passwordSecretRef:
+        name: mysql-user-keycloak
+        key: password
+
+  haproxy:
+    enabled: false
+

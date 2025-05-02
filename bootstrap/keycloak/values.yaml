@@ -1,0 +1,11 @@
+keycloak:
+  postgresql:
+    enabled: false
+  externalDatabase:
+    host: percona-database-pxc-proxysql.percona-database.svc.cluster.local
+    existingSecret: mysql-users-keycloak
+    existingSecretUserKey: username
+    existingSecretPasswordKey: password
+    database: keycloak
+    port: 3306
+    ssl: false
