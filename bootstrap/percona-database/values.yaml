@@ -1,0 +1,19 @@
+pxc-db:
+  pxc:
+    image:
+      tag: 8.0.26-17.1
+    certManager: true
+    persistence:
+      storageClass: "nfs-storage"
+
+  proxysql:
+    enabled: true
+    persistence:
+      storageClass: "nfs-storage"
+
+  pmm:
+    enabled: false
+
+  haproxy:
+    enabled: false
+

@@ -1,0 +1,10 @@
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: ip-pool
+  namespace: metallb-system
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  addresses:
+    - 192.168.7.241-192.168.7.254
