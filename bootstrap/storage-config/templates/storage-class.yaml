@@ -6,3 +6,7 @@ provisioner: nfs.csi.k8s.io
 parameters:
   server: 192.168.7.92
   share: /volume1/K8s
+mountOptions:
+  - vers=3
+  - nolock
+  - tcp
