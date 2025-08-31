@@ -10,8 +10,6 @@ spec:
     - istio-system/sorsby-co-gateway
   http:
     - route:
-        websocketUpgrade: true
-        timeout: 0s
         - destination:
             host: home-assistant.home-assistant.svc.cluster.local
             port:
