@@ -18,7 +18,7 @@ prometheus:
 
 grafana:
   initChownData:
-    enabled: false
+    enabled: true
   persistence:
     enabled: true
     storageClassName: "nfs-storage"
